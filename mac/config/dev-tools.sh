@@ -82,28 +82,32 @@ fi
 echo ""
 echo "--- .NET ---"
 DOTNET_VERSION="10.0.200"
-ARCH=$(uname -m)
-if [ "$ARCH" = "arm64" ]; then
-    DOTNET_ARCH="arm64"
-elif [ "$ARCH" = "x86_64" ]; then
-    DOTNET_ARCH="x64"
+if command -v dotnet &>/dev/null && [ "$(dotnet --version 2>/dev/null)" = "$DOTNET_VERSION" ]; then
+    echo "✓ .NET SDK $DOTNET_VERSION already installed"
 else
-    echo "Unknown architecture: $ARCH, skipping .NET install"
-    exit 0
+    ARCH=$(uname -m)
+    if [ "$ARCH" = "arm64" ]; then
+        DOTNET_ARCH="arm64"
+    elif [ "$ARCH" = "x86_64" ]; then
+        DOTNET_ARCH="x64"
+    else
+        echo "Unknown architecture: $ARCH, skipping .NET install"
+        exit 0
+    fi
+
+    DOTNET_PKG="dotnet-sdk-${DOTNET_VERSION}-osx-${DOTNET_ARCH}.pkg"
+    DOTNET_URL="https://dotnetcli.azureedge.net/dotnet/Sdk/${DOTNET_VERSION}/${DOTNET_PKG}"
+
+    echo "Downloading .NET SDK ${DOTNET_VERSION} (${DOTNET_ARCH})..."
+    curl -sSL -o "/tmp/${DOTNET_PKG}" "${DOTNET_URL}"
+
+    echo "Installing .NET SDK (requires sudo)..."
+    sudo installer -pkg "/tmp/${DOTNET_PKG}" -target /
+
+    rm "/tmp/${DOTNET_PKG}"
+
+    echo "✓ .NET SDK ${DOTNET_VERSION} installed"
 fi
-
-DOTNET_PKG="dotnet-sdk-${DOTNET_VERSION}-osx-${DOTNET_ARCH}.pkg"
-DOTNET_URL="https://dotnetcli.azureedge.net/dotnet/Sdk/${DOTNET_VERSION}/${DOTNET_PKG}"
-
-echo "Downloading .NET SDK ${DOTNET_VERSION} (${DOTNET_ARCH})..."
-curl -sSL -o "/tmp/${DOTNET_PKG}" "${DOTNET_URL}"
-
-echo "Installing .NET SDK (requires sudo)..."
-sudo installer -pkg "/tmp/${DOTNET_PKG}" -target /
-
-rm "/tmp/${DOTNET_PKG}"
-
-echo "✓ .NET SDK ${DOTNET_VERSION} installed"
 
 echo ""
 echo "=== Dev Tools Setup complete ==="
