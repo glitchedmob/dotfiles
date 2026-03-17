@@ -19,6 +19,11 @@ else
     exit 1
 fi
 
+DOCK_SCRIPT="$(dirname "$0")/dock.sh"
+if [ -f "$DOCK_SCRIPT" ]; then
+    "$DOCK_SCRIPT"
+fi
+
 MENUBAR_SCRIPT="$(dirname "$0")/menubar.sh"
 if [ -f "$MENUBAR_SCRIPT" ]; then
     "$MENUBAR_SCRIPT"

@@ -13,6 +13,7 @@ brew "ripgrep"
 brew "go"
 brew "tenv"
 brew "anomalyco/tap/opencode"
+brew "dockutil"
 
 brew "pyenv"
 brew "rbenv"
