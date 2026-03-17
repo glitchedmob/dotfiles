@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "domains": {
+    "NSGlobalDomain": {
+      "KeyRepeat": 2,
+      "InitialKeyRepeat": 25,
+      "com.apple.keyboard.fnState": true
+    }
+  }
+}

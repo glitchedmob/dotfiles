@@ -1,0 +1,4 @@
+tap "jmcombs/macprefs"
+
+brew "jmcombs/macprefs/macprefs"
+brew "chezmoi"

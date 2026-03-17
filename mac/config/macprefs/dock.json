@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "domains": {
+    "com.apple.dock": {
+      "autohide": true,
+      "autohide-delay": false,
+      "autohide-time-modifier": 0.2,
+      "magnification": true,
+      "largesize": 89,
+      "tilesize": 32,
+      "show-process-indicators": false,
+      "show-recents": false,
+      "mru-spaces": false
+    }
+  }
+}

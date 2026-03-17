@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "domains": {
+    "com.apple.AppleMultitouchTrackpad": {
+      "Clicking": false,
+      "TrackpadRightClick": true,
+      "TrackpadThreeFingerDrag": false
+    },
+    "NSGlobalDomain": {
+      "com.apple.swipescrolldirection": false
+    }
+  }
+}

@@ -2,9 +2,9 @@
 
 set -e
 
-DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
+DOTFILES_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
-echo "=== macOS Dotfiles Installer ==="
+echo "=== macOS Bootstrap ==="
 echo ""
 
 # Check and install Xcode Command Line Tools
@@ -38,10 +38,10 @@ brew install --cask 1password
 brew install 1password-cli
 echo "✓ 1Password installed"
 
-# Install chezmoi
-echo "Installing chezmoi..."
-brew install chezmoi
-echo "✓ chezmoi installed"
-
 echo ""
-echo "=== Install complete ==="
+echo "=== Bootstrap complete ==="
+echo ""
+echo "Next steps:"
+echo "  1. Sign into 1Password desktop app"
+echo "  2. Authenticate 1Password CLI: eval \$(op signin)"
+echo "  3. Run: ./install.sh"

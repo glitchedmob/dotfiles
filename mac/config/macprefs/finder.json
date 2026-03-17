@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "domains": {
+    "com.apple.finder": {
+      "ShowPathbar": true,
+      "ShowStatusBar": true,
+      "FXPreferredViewStyle": "Nlsv"
+    }
+  }
+}
