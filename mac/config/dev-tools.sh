@@ -42,8 +42,12 @@ if command -v rbenv &>/dev/null; then
     eval "$(rbenv init -)"
     RUBY_LATEST=$(rbenv install -l | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | tail -1)
     if [ -n "$RUBY_LATEST" ]; then
-        echo "Installing Ruby $RUBY_LATEST..."
-        rbenv install "$RUBY_LATEST"
+        if rbenv versions | grep -q "^  $RUBY_LATEST$"; then
+            echo "✓ Ruby $RUBY_LATEST already installed"
+        else
+            echo "Installing Ruby $RUBY_LATEST..."
+            rbenv install "$RUBY_LATEST"
+        fi
         rbenv global "$RUBY_LATEST"
     else
         echo "Could not determine latest Ruby version, skipping"
