@@ -52,4 +52,9 @@ else
 fi
 
 echo ""
+echo "Setting gh editor to neovim..."
+gh config set editor nvim
+echo "✓ gh editor set to nvim"
+
+echo ""
 echo "=== Install complete ==="

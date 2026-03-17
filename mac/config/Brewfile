@@ -3,6 +3,7 @@ tap "anomalyco/tap"
 
 brew "jmcombs/macprefs/macprefs"
 brew "git"
+brew "neovim"
 brew "chezmoi"
 brew "lazygit"
 brew "mas"

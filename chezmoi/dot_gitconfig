@@ -3,6 +3,8 @@
 [user]
 	name = Levi Zitting
 	email = me@levizitting.com
+[core]
+	editor = nvim
 [init]
 	defaultBranch = main
 [filter "lfs"]
