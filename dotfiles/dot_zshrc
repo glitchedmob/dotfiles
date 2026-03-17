@@ -1,0 +1,19 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="agnoster"
+DEFAULT_USER=$(whoami)
+
+export NVM_LAZY_LOADING=true
+export NVM_COMPLETION=true
+export NVM_AUTO_USE=false
+
+plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-nvm pyenv-lazy)
+
+source $ZSH/oh-my-zsh.sh
+
+eval "$(rbenv init - zsh)"
+
+export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+
+PROMPT="${PROMPT}"$'\n''$ '
