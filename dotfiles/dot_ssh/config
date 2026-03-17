@@ -1,0 +1,15 @@
+Host middleout.levizitting.com
+
+Host bighead.levizitting.com
+    ProxyJump ubuntu@middleout.levizitting.com
+
+Host nothotdog.levizitting.com
+    ProxyJump ubuntu@middleout.levizitting.com
+
+Host *
+    SetEnv TERM=xterm-256color
+{{- if eq .chezmoi.os "darwin" }}
+    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+{{- else }}
+    IdentityAgent "~/.1password/agent.sock"
+{{- end }}
