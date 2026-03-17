@@ -24,6 +24,21 @@ echo ""
 echo ""
 "$MAC_DIR/config/defaults.sh"
 
+# Run zsh.sh (Oh My Zsh and plugins)
+echo ""
+"$MAC_DIR/config/zsh.sh"
+
+# Run dev-tools.sh (nvm, Python, Node, .NET)
+echo ""
+"$MAC_DIR/config/dev-tools.sh"
+
+# Create project directories
+echo ""
+echo "Creating project directories..."
+mkdir -p "$HOME/projects/lz"
+mkdir -p "$HOME/playground"
+echo "✓ Directories created"
+
 # Initialize and apply chezmoi
 echo ""
 echo "Applying chezmoi dotfiles..."
