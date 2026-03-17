@@ -58,7 +58,9 @@ fi
 
 echo ""
 echo "--- CocoaPods ---"
-if command -v gem &>/dev/null; then
+if command -v pod &>/dev/null; then
+    echo "✓ CocoaPods already installed"
+elif command -v gem &>/dev/null; then
     echo "Installing CocoaPods..."
     gem install cocoapods --no-document
 else
@@ -68,13 +70,21 @@ fi
 echo ""
 echo "--- tenv (Terraform/OpenTofu) ---"
 if command -v tenv &>/dev/null; then
-    echo "Installing latest OpenTofu..."
-    tenv tofu install latest
-    tenv tofu use latest
+    if tofu version &>/dev/null; then
+        echo "✓ OpenTofu already installed"
+    else
+        echo "Installing latest OpenTofu..."
+        tenv tofu install latest
+        tenv tofu use latest
+    fi
     
-    echo "Installing latest Terraform..."
-    tenv terraform install latest
-    tenv terraform use latest
+    if terraform version &>/dev/null; then
+        echo "✓ Terraform already installed"
+    else
+        echo "Installing latest Terraform..."
+        tenv terraform install latest
+        tenv terraform use latest
+    fi
 else
     echo "tenv not found, skipping Terraform/OpenTofu install"
 fi
