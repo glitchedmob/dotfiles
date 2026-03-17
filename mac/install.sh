@@ -42,7 +42,8 @@ echo "✓ Directories created"
 # Initialize and apply chezmoi
 echo ""
 echo "Applying chezmoi dotfiles..."
-chezmoi init --source "$DOTFILES_DIR/dotfiles"
+mkdir -p "$HOME/.local/share"
+ln -sf "$DOTFILES_DIR/dotfiles" "$HOME/.local/share/chezmoi"
 chezmoi apply
 
 # Convert dotfiles remote from HTTPS to SSH
