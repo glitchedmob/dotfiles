@@ -4,7 +4,7 @@
     "com.apple.dock": {
       "autohide": true,
       "autohide-delay": false,
-      "autohide-time-modifier": 0.2,
+      "autohide-time-modifier": 0.203125,
       "magnification": true,
       "largesize": 89,
       "tilesize": 32,
