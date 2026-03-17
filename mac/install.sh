@@ -44,7 +44,8 @@ echo ""
 echo "Applying chezmoi dotfiles..."
 mkdir -p "$HOME/.local/share"
 rm -rf "$HOME/.local/share/chezmoi"
-ln -s "$DOTFILES_DIR/dotfiles" "$HOME/.local/share/chezmoi"
+ln -s "$DOTFILES_DIR" "$HOME/.local/share/chezmoi"
+chezmoi init
 chezmoi apply
 
 # Convert dotfiles remote from HTTPS to SSH
