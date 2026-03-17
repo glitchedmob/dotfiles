@@ -1,5 +1,4 @@
 tap "jmcombs/macprefs"
-tap "homebrew/cask-fonts"
 tap "anomalyco/tap"
 
 brew "jmcombs/macprefs/macprefs"
@@ -28,6 +27,7 @@ brew "uv"
 cask "font-roboto-mono-nerd-font"
 
 cask "ghostty"
+cask "raycast"
 cask "jetbrains-toolbox"
 cask "visual-studio-code"
 cask "firefox"

@@ -22,6 +22,20 @@ if [ -f "$MENUBAR_SCRIPT" ]; then
     "$MENUBAR_SCRIPT"
 fi
 
+echo ""
+echo "Setting desktop wallpaper..."
+DOTFILES_ASSETS="$DOTFILES_DIR/assets"
+WALLPAPER_SRC="$DOTFILES_ASSETS/background-logo.png"
+WALLPAPER_DEST="$HOME/Pictures/background-logo.png"
+
+if [ -f "$WALLPAPER_SRC" ]; then
+    cp "$WALLPAPER_SRC" "$WALLPAPER_DEST"
+    osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$WALLPAPER_DEST\""
+    echo "✓ Wallpaper set"
+else
+    echo "Wallpaper not found at $WALLPAPER_SRC, skipping"
+fi
+
 echo "Restarting affected services..."
 killall Dock Finder 2>/dev/null || true
 
