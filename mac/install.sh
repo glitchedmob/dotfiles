@@ -16,17 +16,6 @@ if ! op whoami &>/dev/null; then
 fi
 echo "✓ 1Password authenticated"
 
-# Convert dotfiles remote from HTTPS to SSH
-echo ""
-echo "Converting dotfiles remote to SSH..."
-cd "$DOTFILES_DIR"
-if git remote get-url origin | grep -q "^https://"; then
-  git remote set-url origin git@github.com:glitchedmob/dotfiles.git
-  echo "✓ Remote converted to SSH"
-else
-  echo "✓ Remote already using SSH"
-fi
-
 # Run brew.sh (installs packages including chezmoi)
 echo ""
 "$MAC_DIR/config/brew.sh"
@@ -55,6 +44,17 @@ echo ""
 echo "Applying chezmoi dotfiles..."
 chezmoi init --source "$DOTFILES_DIR/dotfiles"
 chezmoi apply
+
+# Convert dotfiles remote from HTTPS to SSH
+echo ""
+echo "Converting dotfiles remote to SSH..."
+cd "$DOTFILES_DIR"
+if git remote get-url origin | grep -q "^https://"; then
+  git remote set-url origin git@github.com:glitchedmob/dotfiles.git
+  echo "✓ Remote converted to SSH"
+else
+  echo "✓ Remote already using SSH"
+fi
 
 echo ""
 echo "=== Install complete ==="
