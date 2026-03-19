@@ -15,6 +15,7 @@ brew "go"
 brew "tenv"
 brew "anomalyco/tap/opencode"
 brew "dockutil"
+brew "magic-wormhole"
 
 brew "pyenv"
 brew "rbenv"
