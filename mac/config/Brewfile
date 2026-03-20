@@ -17,6 +17,7 @@ brew "cmake"
 brew "anomalyco/tap/opencode"
 brew "dockutil"
 brew "magic-wormhole"
+brew "awscli"
 
 brew "pyenv"
 brew "rbenv"
