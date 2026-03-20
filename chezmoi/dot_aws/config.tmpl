@@ -1,0 +1,28 @@
+{{- $item := op "AWS Config" "Dev" "Levi Zitting Shared" }}
+[profile levi-opensgf]
+sso_session = levi-opensgf
+sso_account_id = {{ index $item.opensgf "account id" }}
+sso_role_name = {{ index $item.opensgf role }}
+region = us-east-2
+[sso-session levi-opensgf]
+sso_start_url = {{ index $item.opensgf "start url" }}
+sso_region = us-east-2
+sso_registration_scopes = sso:account:access
+[profile levi-sgfdevs-admin]
+sso_session = levi-sgfdevs
+sso_account_id = {{ index $item.sgfdevs "account id" }}
+sso_role_name = {{ index $item.sgfdevs role }}
+region = us-east-2
+[sso-session levi-sgfdevs]
+sso_start_url = {{ index $item.sgfdevs "start url" }}
+sso_region = us-east-2
+sso_registration_scopes = sso:account:access
+[profile levi-personal-admin]
+sso_session = levi-personal
+sso_account_id = {{ index $item.personal "account id" }}
+sso_role_name = {{ index $item.personal role }}
+region = us-east-2
+[sso-session levi-personal]
+sso_start_url = {{ index $item.personal "start url" }}
+sso_region = us-east-2
+sso_registration_scopes = sso:account:access
