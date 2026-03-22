@@ -11,6 +11,8 @@ plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-nvm pyenv-lazy)
 
 source $ZSH/oh-my-zsh.sh
 
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 eval "$(rbenv init - zsh)"
 
 export PATH="$HOME/.dotnet/tools:$PATH"

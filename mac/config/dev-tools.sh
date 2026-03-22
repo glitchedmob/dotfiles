@@ -90,6 +90,31 @@ else
 fi
 
 echo ""
+echo "--- SDKMAN ---"
+SDKMAN_BASH="/opt/homebrew/bin/bash"
+if [ ! -f "$SDKMAN_BASH" ]; then
+    SDKMAN_BASH="/usr/local/bin/bash"
+fi
+
+if [ ! -d "$HOME/.sdkman" ]; then
+    echo "Installing SDKMAN..."
+    "$SDKMAN_BASH" -c "curl -s 'https://get.sdkman.io' | $SDKMAN_BASH"
+else
+    echo "✓ SDKMAN already installed"
+fi
+
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+echo ""
+echo "--- Java (JDK) ---"
+if java -version &>/dev/null; then
+    echo "✓ Java already installed: $(java -version 2>&1 | head -1)"
+else
+    echo "Installing latest JDK..."
+    sdk install java
+fi
+
+echo ""
 echo "--- .NET ---"
 DOTNET_VERSION="10.0.200"
 if command -v dotnet &>/dev/null && [ "$(dotnet --version 2>/dev/null)" = "$DOTNET_VERSION" ]; then
