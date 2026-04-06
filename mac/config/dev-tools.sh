@@ -1,5 +1,15 @@
 #!/bin/bash
 
+if [ -z "${BASH_VERSION:-}" ] || [ "${BASH_VERSINFO:-0}" -lt 4 ]; then
+    for candidate_bash in /opt/homebrew/bin/bash /usr/local/bin/bash; do
+        if [ -x "$candidate_bash" ]; then
+            exec "$candidate_bash" "$0" "$@"
+        fi
+    done
+    echo "ERROR: dev-tools.sh requires Homebrew bash (4+). Install with: brew install bash"
+    exit 1
+fi
+
 set -e
 
 echo "=== Dev Tools Setup ==="
