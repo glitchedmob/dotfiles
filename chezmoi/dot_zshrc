@@ -20,4 +20,6 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.flutter/bin:$PATH"
 export PATH="$HOME/.pub-cache/bin:$PATH"
 
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+
 PROMPT="${PROMPT}"$'\n''$ '
