@@ -15,6 +15,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 eval "$(rbenv init - zsh)"
 
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.flutter/bin:$PATH"
