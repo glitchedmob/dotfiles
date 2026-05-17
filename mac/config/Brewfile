@@ -1,6 +1,7 @@
 tap "jmcombs/macprefs"
 tap "anomalyco/tap"
 tap "alajmo/mani"
+tap "derailed/k9s"
 
 brew "jmcombs/macprefs/macprefs"
 brew "bash"
@@ -23,6 +24,7 @@ brew "anomalyco/tap/opencode"
 brew "dockutil"
 brew "magic-wormhole"
 brew "awscli"
+brew "derailed/k9s/k9s"
 
 brew "pyenv"
 brew "rbenv"
