@@ -1,4 +1,5 @@
 {
   "$schema": "https://opencode.ai/tui.json",
-  "theme": "system"
+  "theme": "system",
+  "session_list_limit": 1000
 }
