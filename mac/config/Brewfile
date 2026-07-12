@@ -40,6 +40,7 @@ brew "uv"
 
 cask "font-roboto-mono-nerd-font"
 
+cask "codex"
 cask "ghostty"
 cask "raycast"
 cask "jetbrains-toolbox"
