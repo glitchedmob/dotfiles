@@ -7,6 +7,7 @@ export NVM_LAZY_LOADING=true
 export NVM_COMPLETION=true
 export NVM_AUTO_USE=false
 export OPENCODE_ENABLE_EXA=1
+[ -r "$HOME/.config/secrets.env" ] && source "$HOME/.config/secrets.env"
 
 plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-nvm pyenv-lazy)
 

@@ -40,6 +40,12 @@ ln -s "$DOTFILES_DIR" "$HOME/.local/share/chezmoi"
 chezmoi init
 chezmoi apply
 
+# Inject shell secrets
+echo ""
+echo "Injecting shell secrets..."
+op inject --force --in-file "$MAC_DIR/config/secrets.env.tpl" --out-file "$HOME/.config/secrets.env"
+echo "✓ Shell secrets injected"
+
 # Convert dotfiles remote from HTTPS to SSH
 echo ""
 echo "Converting dotfiles remote to SSH..."
