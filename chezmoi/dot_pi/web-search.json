@@ -1,0 +1,30 @@
+{
+  "provider": "openai",
+  "openaiSearchProviders": [
+    "openai-codex"
+  ],
+  "geminiApiKey": "!op read 'op://Private/Gemini API Key/password'",
+  "workflow": "none",
+  "allowBrowserCookies": false,
+  "autoOpenBrowser": false,
+  "youtube": {
+    "enabled": true,
+    "preferredModel": "gemini-3.6-flash"
+  },
+  "video": {
+    "enabled": true,
+    "preferredModel": "gemini-3.6-flash",
+    "maxSizeMB": 50
+  },
+  "commands": {
+    "websearch": {
+      "enabled": false
+    },
+    "curator": {
+      "enabled": false
+    },
+    "google-account": {
+      "enabled": false
+    }
+  }
+}
