@@ -11,6 +11,7 @@
     "openai-codex/gpt-5.6-terra"
   ],
   "packages": [
-    "npm:pi-web-access@0.27.0"
+    "npm:pi-web-access@0.27.0",
+    "npm:pi-fabric@0.70.0"
   ]
 }

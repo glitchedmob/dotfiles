@@ -1,0 +1,12 @@
+{
+  "configVersion": 3,
+  "fullCodeMode": false,
+  "mcp": {
+    "cache": {
+      "enabled": false
+    }
+  },
+  "mesh": {
+    "enabled": false
+  }
+}
