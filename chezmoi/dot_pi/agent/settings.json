@@ -9,5 +9,8 @@
   "enabledModels": [
     "openai-codex/gpt-5.6-sol",
     "openai-codex/gpt-5.6-terra"
+  ],
+  "packages": [
+    "npm:pi-web-search@1.3.1"
   ]
 }
