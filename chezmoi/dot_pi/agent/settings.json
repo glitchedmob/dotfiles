@@ -2,7 +2,7 @@
   "theme": "dark",
   "defaultProvider": "opencode",
   "defaultModel": "gpt-5.4",
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "high",
   "hideThinkingBlock": false,
   "tuiMode": "regular",
   "treeFilterMode": "default",
