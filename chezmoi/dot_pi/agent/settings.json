@@ -1,7 +1,7 @@
 {
   "theme": "dark",
-  "defaultProvider": "opencode",
-  "defaultModel": "gpt-5.4",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-6-astra",
   "defaultThinkingLevel": "high",
   "hideThinkingBlock": false,
   "tuiMode": "regular",
