@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "todoist": {
+      "baseUrl": "https://ai.todoist.net/mcp",
+      "auth": "oauth"
+    }
+  }
+}
