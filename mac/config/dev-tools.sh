@@ -37,6 +37,15 @@ else
 fi
 
 echo ""
+echo "--- Pi ---"
+if command -v npm &>/dev/null; then
+    echo "Installing Pi..."
+    npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+else
+    echo "npm not found, skipping Pi install"
+fi
+
+echo ""
 echo "--- Python ---"
 if command -v pyenv &>/dev/null; then
     echo "Installing latest Python..."
