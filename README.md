@@ -26,5 +26,7 @@ Requires Node.js 24+, npm, and curl on an already configured machine.
 pi
 ```
 
-Installs Pi and applies the shared Pi and MCP configuration. Leaves AWS, SSH,
-and shell settings alone. Use `/login` in Pi to sign in.
+Installs Pi and applies all shared dotfiles, installing chezmoi if needed.
+Pi installs its configured packages on startup. Use `/login` in Pi to sign in.
+
+The AWS template currently requires 1Password CLI authentication.
