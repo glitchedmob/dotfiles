@@ -1,38 +1,30 @@
-# dotfiles
+# Dotfiles
 
-Personal machine setup for macOS.
+Run these commands from this checkout.
 
-## Quick Start
+## Mac
 
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
-cd ~/dotfiles/mac
-./bootstrap.sh
+./mac/bootstrap.sh
 ```
 
-After bootstrap completes:
-1. Sign into 1Password desktop app
-2. Authenticate 1Password CLI: `eval $(op signin)`
-3. Run: `./install.sh`
+Sign into the 1Password desktop app, then run:
 
-## Structure
-
-```
-dotfiles/
-├── mac/
-│   ├── bootstrap.sh          # Xcode, Homebrew, 1Password
-│   ├── install.sh           # Packages, defaults, chezmoi
-│   └── config/
-│       ├── brew.sh           # Homebrew packages
-│       ├── defaults.sh       # macOS system defaults
-│       └── Brewfile          # Package list
-├── dotfiles/                 # chezmoi source files
-└── .chezmoi.yaml.tmpl       # chezmoi configuration
+```bash
+eval "$(op signin)"
+./mac/install.sh
 ```
 
-## Bootstrap vs Install
+Installs applications, development tools, and dotfiles.
 
-| Script | Purpose | Requires 1Password |
-|--------|---------|-------------------|
-| `bootstrap.sh` | Minimal tools: Xcode, Homebrew, 1Password | No |
-| `install.sh` | Packages, macOS defaults, dotfiles | Yes |
+## Fedora
+
+Requires Node.js 24+, npm, and curl on an already configured machine.
+
+```bash
+./fedora/install.sh
+pi
+```
+
+Installs Pi and applies the shared Pi and MCP configuration. Leaves AWS, SSH,
+and shell settings alone. Use `/login` in Pi to sign in.
