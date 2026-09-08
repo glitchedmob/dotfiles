@@ -13,16 +13,22 @@ plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-nvm pyenv-lazy)
 
 source $ZSH/oh-my-zsh.sh
 
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-eval "$(rbenv init - zsh)"
+if command -v rbenv >/dev/null 2>&1; then
+  eval "$(rbenv init - zsh)"
+fi
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.flutter/bin:$PATH"
 export PATH="$HOME/.pub-cache/bin:$PATH"
-
+export PATH="$HOME/.opencode/bin:$PATH"
+export PATH="$HOME/.lmstudio/bin:$PATH"
+{{ if eq .chezmoi.os "linux" }}
+export PATH="/usr/local/go/bin:$PATH"
+{{ end }}
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 PROMPT="${PROMPT}"$'\n''$ '
