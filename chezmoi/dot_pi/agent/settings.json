@@ -6,6 +6,9 @@
   "hideThinkingBlock": false,
   "tuiMode": "regular",
   "treeFilterMode": "default",
+  "terminal": {
+    "hyperlinks": true
+  },
   "enabledModels": [
     "openai-codex/gpt-5.6-sol",
     "openai-codex/gpt-5.6-terra",
