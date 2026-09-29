@@ -15,7 +15,7 @@
     "openai-codex/gpt-6-sol"
   ],
   "packages": [
-    "npm:pi-web-access@0.27.0",
-    "npm:pi-fabric@0.70.0"
+    "npm:pi-web-access@0.32.0",
+    "npm:pi-fabric@0.101.1"
   ]
 }
