@@ -17,4 +17,3 @@ if ! command -v chezmoi >/dev/null 2>&1; then
 fi
 
 chezmoi --source "$DOTFILES_DIR" apply
-npm ci --ignore-scripts --prefix "$HOME/.pi/agent/extensions/fabric-local-files"

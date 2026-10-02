@@ -14,8 +14,9 @@
     "openai-codex/gpt-6-astra",
     "openai-codex/gpt-6.1-sol"
   ],
+  "defaultTools": ["+codemode"],
   "packages": [
-    "npm:pi-fabric@0.101.1",
     "npm:pi-web-access@0.32.0"
-  ]
+  ],
+  "lastChangelogVersion": "1.0.0"
 }
