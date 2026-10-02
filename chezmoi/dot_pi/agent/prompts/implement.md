@@ -1,10 +1,9 @@
 ---
 description: Full implementation workflow - scout gathers context, planner creates plan, worker implements
 ---
-Use the subagent tool with the chain parameter to execute this workflow:
+Use a background subagent workflow for: $@
 
-1. First, use the "scout" agent to find all code relevant to: $@
-2. Then, use the "planner" agent to create an implementation plan for "$@" using the context from the previous step (use {previous} placeholder)
-3. Finally, use the "worker" agent to implement the plan from the previous step (use {previous} placeholder)
-
-Execute this as a chain, passing output between steps via {previous}.
+Run scout to gather context, then planner to create a plan, then worker to implement it.
+Compose the sequence with `runs.run`, passing each completed result's `output` to the next task. Give each step a stable key and short label.
+Write one `js workflow` fenced block, then call `subagent({ workflow: true, async: true })`.
+Return control after launch; completion will arrive separately.
