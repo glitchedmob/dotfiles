@@ -1,9 +1,10 @@
 ---
 description: Worker implements, reviewer reviews, worker applies feedback
 ---
-Use a background subagent workflow for: $@
+Use the subagent tool with the chain parameter to execute this workflow:
 
-Run worker to implement, reviewer to review the changes, then worker to apply the feedback.
-Compose the sequence with `runs.run`, passing each completed result's `output` to the next task. Give each step a stable key and short label.
-Write one `js workflow` fenced block, then call `subagent({ workflow: true, async: true })`.
-Return control after launch; completion will arrive separately.
+1. First, use the "worker" agent to implement: $@
+2. Then, use the "reviewer" agent to review the implementation from the previous step (use {previous} placeholder)
+3. Finally, use the "worker" agent to apply the feedback from the review (use {previous} placeholder)
+
+Execute this as a chain, passing output between steps via {previous}.
