@@ -16,7 +16,8 @@
   ],
   "defaultTools": ["+codemode"],
   "packages": [
-    "npm:pi-web-access@0.32.0"
+    "npm:pi-web-access@0.32.0",
+    "npm:@tintinweb/pi-subagents@0.21.0"
   ],
   "lastChangelogVersion": "1.0.0"
 }
